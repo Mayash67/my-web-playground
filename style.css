@@ -1,0 +1,289 @@
+/* ألوان التصميم */
+:root {
+    --paper: #fff8fb;
+    --pink-light: #f5e2ed;
+    --pink: #d8a6c1;
+    --pink-dark: #963d70;
+    --ink: #51394b;
+    --gold: #a78954;
+    --border: #dfc5d3;
+}
+
+/* حساب العرض يشمل المسافات والإطار */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: #f0e2eb;
+}
+
+/* الصفحة مثل ورقة داخل مخطوط */
+body {
+    max-width: 900px;
+    margin: 28px auto;
+    padding: 44px;
+    color: var(--ink);
+    background-color: var(--paper);
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 2;
+    border:  double 6px var(--border);
+    box-shadow: 0 10px 35px #51394b12;
+    overflow-wrap: break-word;
+}
+
+/* لوحة العنوان وإطارها المزخرف */
+h1 {
+    position: relative;
+    margin: 0;
+    padding: 54px 20px;
+    text-align: center;
+    color: var(--pink-dark);
+    font-family: "Traditional Arabic", "Amiri", serif;
+    font-size: clamp(36px, 7vw, 58px);
+    line-height: 1.5;
+    background-color: var(--pink-light);
+    border: 1px solid var(--gold);
+    outline: 1px solid var(--gold);
+    outline-offset: -9px;
+}
+
+/* شريطان هندسيان أعلى العنوان وأسفله */
+h1::before,
+h1::after {
+    content: "";
+    position: absolute;
+    right: 18px;
+    left: 18px;
+    height: 12px;
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 42%,
+            var(--gold) 43%,
+            var(--gold) 49%,
+            transparent 50%
+        ),
+        linear-gradient(
+            -45deg,
+            transparent 42%,
+            var(--gold) 43%,
+            var(--gold) 49%,
+            transparent 50%
+        );
+    background-size: 18px 18px;
+    opacity: 0.7;
+}
+
+h1::before {
+    top: 20px;
+}
+
+h1::after {
+    bottom: 20px;
+}
+
+/* فقرة الترحيب التالية للعنوان مباشرة */
+h1 + p {
+    margin: 22px 0;
+    text-align: center;
+    color: #76566c;
+}
+
+/* روابط التنقل */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    padding: 18px 0;
+    margin-bottom: 36px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+nav a {
+    color: var(--pink-dark);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+nav a:hover {
+    border-bottom-color: var(--gold);
+}
+
+/* عناوين الأقسام */
+h2 {
+    margin: 44px 0 16px;
+    padding-bottom: 10px;
+    color: var(--pink-dark);
+    font-size: 24px;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 24px;
+}
+
+/* زخرفة صغيرة قبل كل عنوان */
+h2::before {
+    content: "✦";
+    display: inline-block;
+    margin-inline-end: 10px;
+    color: var(--gold);
+    font-size: 20px;
+}
+
+h3 {
+    margin: 26px 0 10px;
+    color: #80516f;
+    font-size: 19px;
+}
+
+h4 {
+    color: var(--pink-dark);
+    font-size: 18px;
+}
+
+p {
+    margin: 12px 0;
+}
+
+/* قائمة خطوات عرض الموقع */
+ol {
+    padding-inline-start: 28px;
+}
+
+li {
+    padding-inline-start: 6px;
+    margin-bottom: 10px;
+}
+
+li::marker {
+    color: var(--pink-dark);
+    font-weight: bold;
+}
+
+/* أمثلة الكود */
+pre {
+    direction: ltr;
+    text-align: left;
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 20px;
+    margin: 18px 0;
+    color: var(--ink);
+    background-color: #f6eaf1;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: 4px;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+code {
+    font-family: Consolas, "Courier New", monospace;
+}
+
+/* مثال تغيير اللون باستخدام CSS */
+.pink-example {
+    color: #b84482;
+}
+
+/* رسالة التجربة */
+#welcome-message {
+    padding: 14px 18px;
+    background-color: var(--pink-light);
+    border-inline-start: 3px solid var(--gold);
+}
+
+/* زر التفاعل */
+button {
+    padding: 10px 26px;
+    color: var(--paper);
+    background-color: var(--pink-dark);
+    border: 1px solid var(--pink-dark);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    transition:
+        background-color 0.2s,
+        transform 0.2s;
+}
+
+button:hover {
+    background-color: #7c315c;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* إظهار مكان التركيز عند استخدام لوحة المفاتيح */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 5px;
+}
+
+/* تكييف التصميم للشاشات الصغيرة */
+@media (max-width: 600px) {
+    body {
+        margin: 12px;
+        padding: 24px 18px;
+    }
+
+    h1 {
+        padding: 46px 14px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    nav {
+        gap: 10px 16px;
+    }
+
+    pre {
+        padding: 14px;
+    }
+}
+
+/* احترام تفضيل تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    button,
+    nav a {
+        transition: none;
+    }
+
+    button:hover {
+        transform: none;
+    }
+}
+html {
+    min-height: 100%;
+    background-color: #fff5f9;
+    background-image:
+        linear-gradient(
+            rgba(255, 245, 249, 0.85),
+            rgba(255, 245, 249, 0.85)
+        ),
+        url("photo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
