@@ -287,3 +287,11 @@ body {
     border: none;
     box-shadow: none;
 }
+@media (max-width: 600px) {
+    html {
+        background-size: 100% auto;
+        background-position: center top;
+        background-repeat: repeat-y;
+        background-attachment: scroll;
+    }
+}
