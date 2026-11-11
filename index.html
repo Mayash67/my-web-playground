@@ -3,111 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مساحتي الأولى في الويب</title>
+    <title>مساحتي الأولى في الويب | لميس</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
-      <h1>اهلا انا لميس</h1>
-    <p>أهلًا بكم في مساحتي الأولى لتعلّم تطوير الويب.</p>
-    <nav>
-    <a href="#about">من أنا؟</a>
-    <a href="#web">الويب</a>
-    <a href="#html">HTML</a>
-    <a href="#css">CSS</a>
-    <a href="#javascript">JavaScript</a>
-</nav>
+    <header id="top">
+        <h1>أهلًا، أنا لميس</h1>
+        <p>أهلًا بكم في مساحتي الأولى لتعلّم تطوير الويب.</p>
 
-    <h2 id="about">من أنا؟</h2>
-     <p>مهندسه حاسب</p>
+        <a class="next-section" href="#about">
+            ابدئي الرحلة ↓
+        </a>
+    </header>
 
-    <h2>ماذا أريد أن أتعلم؟</h2>
-    <p>بناء مواقع تفاعليه </p>
+    <main>
+        <section id="about" class="reveal">
+            <h2>من أنا؟</h2>
+            <p>أنا لميس، مهندسة حاسب.</p>
 
-     <h2>لماذا اخترت تطوير الويب؟</h2>
-   <p>اريد استخدام حبي للفن في صناعه مواقع جميله وتعكس روح الفن.</p>
-      <h2 id="web">الويب بمفهومي</h2>
-    <p>
-        الويب مجموعة من الصفحات والمواقع المترابطة.
-        أستخدم المتصفح لطلب صفحة من الخادم،
-        ثم يعرض المتصفح محتواها لي.
-    </p>
+            <h3>ماذا أريد أن أتعلم؟</h3>
+            <p>أطمح إلى بناء مواقع تفاعلية وسهلة الاستخدام.</p>
 
-    <h3>كيف تظهر صفحة الموقع؟</h3>
-    <ol>
-        <li>أكتب عنوان الموقع في المتصفح.</li>
-        <li>يطلب المتصفح ملفات الصفحة من الخادم.</li>
-        <li>يرسل الخادم ملفات الصفحة إلى المتصفح.</li>
-        <li>يقرأ المتصفح الملفات ويعرض الصفحة.</li>
-    </ol>
+            <h3>لماذا اخترت تطوير الويب؟</h3>
+            <p>
+                أريد توظيف حبي للفن في صناعة مواقع جميلة
+                تعكس روح الفن.
+            </p>
 
-        <h2 id="html">HTML: هيكل الصفحة</h2>
-    <p>
-        أستخدم HTML لتحديد محتوى الصفحة وتنظيمه،
-        مثل العناوين والفقرات والقوائم.
-    </p>
+            <a class="next-section" href="#web">
+                التالي: الويب بمفهومي ↓
+            </a>
+        </section>
 
-    <h3>مثال على الكود</h3>
-    <pre><code>&lt;h4&gt;الويب ملوك المجالات!&lt;/h4&gt;</code></pre>
+        <section id="web" class="reveal">
+            <h2>الويب بمفهومي</h2>
+            <p>
+                الويب مجموعة من الصفحات والمواقع المترابطة.
+                أستخدم المتصفح لطلب صفحة من الخادم،
+                ثم يعرض المتصفح محتواها لي.
+            </p>
 
-    <h3>نتيجة الكود</h3>
-    <h4> الويب ملوك المجالات!</h4>
+            <h3>كيف تظهر صفحة الموقع؟</h3>
+            <ol>
+                <li>أكتب عنوان الموقع في المتصفح.</li>
+                <li>يطلب المتصفح ملفات الصفحة من الخادم.</li>
+                <li>يرسل الخادم ملفات الصفحة إلى المتصفح.</li>
+                <li>يقرأ المتصفح الملفات ويعرض الصفحة.</li>
+            </ol>
 
-        <h2 id="css">CSS: ألوان الصفحة وتنسيقها</h2>
-    <p>
-        أستخدم CSS للتحكم في ألوان العناصر وخطوطها والمسافات بينها.
-    </p>
+            <a class="next-section" href="#html">
+                التالي: اكتشفي HTML ↓
+            </a>
+        </section>
 
-    <h3>مثال على الكود</h3>
-    <pre><code>.pink-example {
+        <section id="html" class="reveal">
+            <h2>HTML: هيكل الصفحة</h2>
+            <p>
+                أستخدم HTML لتنظيم محتوى الصفحة،
+                مثل العناوين والفقرات والقوائم والروابط.
+            </p>
+
+            <h3>مثال على الكود</h3>
+            <pre tabindex="0" aria-label="مثال رابط HTML"><code>&lt;a href="https://mayash67.github.io/my-web-playground/"
+   target="_blank" rel="noopener"&gt;
+    افتحي مساحتي في الويب ↗
+&lt;/a&gt;</code></pre>
+
+            <h3>جرّبي الرابط</h3>
+            <p>
+                الخاصية <code>href</code> تحدد وجهة الرابط.
+                الرابط التالي يفتح موقعي في تبويب جديد.
+            </p>
+
+            <a
+                class="demo-link"
+                href="https://mayash67.github.io/my-web-playground/"
+                target="_blank"
+                rel="noopener"
+            >
+                افتحي مساحتي في الويب ↗
+            </a>
+
+            <a class="next-section" href="#css">
+                التالي: جرّبي CSS ↓
+            </a>
+        </section>
+
+        <section id="css" class="reveal">
+            <h2>CSS: ألوان الصفحة وتنسيقها</h2>
+            <p>
+                أستخدم CSS للتحكم في الألوان والخطوط والمسافات.
+                في هذه التجربة تحدد CSS الشكل، وتستخدم الأزرار
+                JavaScript لتفعيل التنسيق وإلغائه.
+            </p>
+
+            <h3>مثال على الكود</h3>
+            <pre tabindex="0" aria-label="مثال تنسيق CSS"><code>#style-demo.is-pink {
     color: #b84482;
+}
+
+#style-demo.is-large {
+    font-size: 28px;
 }</code></pre>
 
-    <h3>نتيجة التنسيق</h3>
-    <p>قبل التنسيق: أهلًا في مساحتي!</p>
-    <p class="pink-example">بعد التنسيق: أهلًا في مساحتي!</p>
+            <h3>جرّبي التنسيق بنفسك</h3>
+            <p>اضغطي مرة للتغيير، ومرة أخرى للعودة.</p>
 
-       <h2 id="javascript">JavaScript: التفاعل مع الصفحة</h2>
-    <p>أستخدم JavaScript لجعل الصفحة تستجيب لتفاعل الزائر.</p>
+            <p id="style-demo">
+                الفن والكود يجتمعان في مساحتي!
+            </p>
 
-    <p id="welcome-message">أهلًا بك في مساحتي!</p>
-    <button id="welcome-button">اضغطي هنا</button>
+            <div class="actions">
+                <button
+                    id="color-button"
+                    type="button"
+                    aria-pressed="false"
+                    aria-controls="style-demo"
+                >
+                    غيّري اللون
+                </button>
 
-        <h3>الكود الذي يغيّر الرسالة</h3>
-    <pre><code>button.addEventListener("click", function () {
-    message.textContent = "أنا لميس، وهذه أول تجربة تفاعلية لي! 🌸";
-    message.style.color = "#b84482";
+                <button
+                    id="size-button"
+                    type="button"
+                    aria-pressed="false"
+                    aria-controls="style-demo"
+                >
+                    كبّري النص
+                </button>
+            </div>
+
+            <a class="next-section" href="#javascript">
+                التالي: جرّبي JavaScript ↓
+            </a>
+        </section>
+
+        <section id="javascript" class="reveal">
+            <h2>JavaScript: التفاعل مع الصفحة</h2>
+            <p>
+                أستخدم JavaScript للاستجابة لتفاعل الزائر.
+                هذا العدّاد يحفظ عدد الضغطات ويعرضه مباشرةً.
+            </p>
+
+            <h3>جرّبي العدّاد</h3>
+
+            <p class="counter-display" role="status" aria-live="polite">
+                عدد الضغطات:
+                <span id="counter-value">0</span>
+            </p>
+
+            <div class="actions">
+                <button id="increase-button" type="button">
+                    أضيفي ضغطة +1
+                </button>
+
+                <button
+                    id="reset-button"
+                    class="secondary-button"
+                    type="button"
+                >
+                    ابدئي من الصفر
+                </button>
+            </div>
+
+            <h3>الكود الذي يزيد العدّاد</h3>
+            <pre tabindex="0" aria-label="مثال عداد JavaScript"><code>let count = 0;
+
+increaseButton.addEventListener("click", function () {
+    count = count + 1;
+    counterValue.textContent = count;
 });</code></pre>
 
-        <section>
-        <h2>الواجهة الأمامية والجزء الخلفي</h2>
+            <p>
+                المتغير <code>count</code> يحتفظ بالعدد.
+                كل ضغطة تزيده بواحد، وزر التصفير يعيده إلى صفر.
+                تحديث الصفحة يبدأ التجربة من جديد.
+            </p>
 
-        <h3>Frontend: ما أراه وأتفاعل معه</h3>
-        <p>
-            في المتجر الإلكتروني، تشمل الواجهة الأمامية
-            صور المنتجات والأسعار وزر الإضافة إلى السلة.
-        </p>
+            <a class="next-section" href="#frontend-backend">
+                التالي: الواجهة والخادم ↓
+            </a>
+        </section>
 
-        <h3>Backend: ما يحدث على الخادم</h3>
-        <p>
-            عندما أؤكد الطلب، يتحقق الجزء الخلفي من توفر
-            المنتجات ويسجل الطلب في قاعدة البيانات.
-        </p>
-    </section>
+        <section id="frontend-backend" class="reveal">
+            <h2>الواجهة الأمامية والجزء الخلفي</h2>
 
-     <section>
-        <h2>كيف ساعدني الذكاء الاصطناعي؟</h2>
-        <p>
-    استعنت بـ ChatGPT لتعلّم بناء صفحتي خطوة بخطوة،
-    وفهم دور HTML وCSS وJavaScript،
-    واقتراح التنسيق ومساعدتي في اكتشاف الأخطاء.
-</p>
-<p>
-    خصّصت المحتوى واخترت الألوان وصورة الخلفية،
-    وتعلّمت ربط الملفات وتنسيق العناصر،
-    وتغيير النص ولونه عند الضغط على زر.
-</p>
-    </section>
+            <h3>Frontend: ما أراه وأتفاعل معه</h3>
+            <p>
+                في المتجر الإلكتروني، تشمل الواجهة الأمامية
+                صور المنتجات والأسعار وزر الإضافة إلى السلة.
+                وتجارب الأزرار في صفحتي تعمل داخل المتصفح.
+            </p>
 
-    <script src="script.js"></script>
+            <h3>Backend: ما يحدث على الخادم</h3>
+            <p>
+                عندما أؤكد الطلب، يتحقق الجزء الخلفي من توفر
+                المنتجات ويسجل الطلب في قاعدة البيانات.
+            </p>
+
+            <a class="next-section" href="#ai">
+                التالي: كيف تعلّمت بمساعدة الذكاء الاصطناعي؟ ↓
+            </a>
+        </section>
+
+        <section id="ai" class="reveal">
+            <h2>كيف ساعدني الذكاء الاصطناعي؟</h2>
+            <p>
+                استعنت بـ ChatGPT لتعلّم بناء صفحتي خطوة بخطوة،
+                وفهم دور HTML وCSS وJavaScript،
+                واقتراح التنسيق ومساعدتي في اكتشاف الأخطاء.
+            </p>
+
+            <p>
+                خصّصت المحتوى واخترت الألوان وصورة الخلفية،
+                وطبّقت ربط الملفات وتنسيق العناصر.
+                وساعدني في إضافة تجارب الأزرار والعدّاد
+                وظهور الأقسام تدريجيًا أثناء التمرير.
+            </p>
+
+            <a class="next-section" href="#top">
+                العودة إلى البداية ↑
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        صنعتها بشغف الفن وفضول التعلّم — لميس 🌸
+    </footer>
 </body>
 </html>

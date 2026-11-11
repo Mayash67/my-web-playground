@@ -2,39 +2,46 @@
 :root {
     --paper: #fff8fb;
     --pink-light: #f5e2ed;
-    --pink: #d8a6c1;
     --pink-dark: #963d70;
     --ink: #51394b;
     --gold: #a78954;
     --border: #dfc5d3;
 }
 
-/* حساب العرض يشمل المسافات والإطار */
 * {
     box-sizing: border-box;
 }
 
+/* الصورة مع طبقة فاتحة لتوضيح الكتابة */
 html {
+    min-height: 100%;
     scroll-behavior: smooth;
-    background-color: #f0e2eb;
+    background-color: #fff5f9;
+    background-image:
+        linear-gradient(
+            rgba(255, 245, 249, 0.85),
+            rgba(255, 245, 249, 0.85)
+        ),
+        url("photo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-/* الصفحة مثل ورقة داخل مخطوط */
 body {
     max-width: 900px;
     margin: 28px auto;
     padding: 44px;
     color: var(--ink);
-    background-color: var(--paper);
+    background: transparent;
     font-family: Tahoma, Arial, sans-serif;
     font-size: 16px;
     line-height: 2;
-    border:  double 6px var(--border);
-    box-shadow: 0 10px 35px #51394b12;
     overflow-wrap: break-word;
 }
 
-/* لوحة العنوان وإطارها المزخرف */
+/* عنوان الصفحة */
 h1 {
     position: relative;
     margin: 0;
@@ -50,7 +57,7 @@ h1 {
     outline-offset: -9px;
 }
 
-/* شريطان هندسيان أعلى العنوان وأسفله */
+/* زخارف العنوان */
 h1::before,
 h1::after {
     content: "";
@@ -85,47 +92,31 @@ h1::after {
     bottom: 20px;
 }
 
-/* فقرة الترحيب التالية للعنوان مباشرة */
-h1 + p {
+header > p {
     margin: 22px 0;
     text-align: center;
     color: #76566c;
 }
 
-/* روابط التنقل */
-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px 22px;
-    padding: 18px 0;
-    margin-bottom: 36px;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+/* الأقسام */
+section {
+    margin: 60px 0;
+    padding-top: 12px;
+    scroll-margin-top: 24px;
 }
 
-nav a {
-    color: var(--pink-dark);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s;
+header {
+    scroll-margin-top: 24px;
 }
 
-nav a:hover {
-    border-bottom-color: var(--gold);
-}
-
-/* عناوين الأقسام */
 h2 {
-    margin: 44px 0 16px;
+    margin: 0 0 16px;
     padding-bottom: 10px;
     color: var(--pink-dark);
     font-size: 24px;
     border-bottom: 1px solid var(--border);
-    scroll-margin-top: 24px;
 }
 
-/* زخرفة صغيرة قبل كل عنوان */
 h2::before {
     content: "✦";
     display: inline-block;
@@ -140,16 +131,11 @@ h3 {
     font-size: 19px;
 }
 
-h4 {
-    color: var(--pink-dark);
-    font-size: 18px;
-}
-
 p {
     margin: 12px 0;
 }
 
-/* قائمة خطوات عرض الموقع */
+/* قائمة خطوات الويب */
 ol {
     padding-inline-start: 28px;
 }
@@ -162,6 +148,26 @@ li {
 li::marker {
     color: var(--pink-dark);
     font-weight: bold;
+}
+
+/* روابط الانتقال الموزعة بين الأقسام */
+.next-section {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 36px auto 0;
+    padding: 12px 24px;
+    color: var(--pink-dark);
+    background-color: var(--pink-light);
+    border: 1px solid var(--gold);
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.next-section:hover {
+    background-color: #e4bbd6;
 }
 
 /* أمثلة الكود */
@@ -185,21 +191,50 @@ code {
     font-family: Consolas, "Courier New", monospace;
 }
 
-/* مثال تغيير اللون باستخدام CSS */
-.pink-example {
+/* رابط تجربة HTML */
+.demo-link {
+    display: inline-block;
+    padding: 10px 22px;
+    color: var(--pink-dark);
+    background-color: var(--pink-light);
+    border: 1px solid var(--gold);
+    border-radius: 6px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.demo-link:hover {
+    background-color: #e4bbd6;
+}
+
+/* تجربة CSS */
+#style-demo {
+    padding: 18px;
+    font-size: 18px;
+    background-color: var(--paper);
+    border-inline-start: 3px solid var(--gold);
+    transition: color 0.3s, font-size 0.3s;
+}
+
+#style-demo.is-pink {
     color: #b84482;
 }
 
-/* رسالة التجربة */
-#welcome-message {
-    padding: 14px 18px;
-    background-color: var(--pink-light);
-    border-inline-start: 3px solid var(--gold);
+#style-demo.is-large {
+    font-size: 28px;
 }
 
-/* زر التفاعل */
+/* أزرار التجارب */
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 18px 0;
+}
+
 button {
-    padding: 10px 26px;
+    min-height: 44px;
+    padding: 10px 22px;
     color: var(--paper);
     background-color: var(--pink-dark);
     border: 1px solid var(--pink-dark);
@@ -207,9 +242,7 @@ button {
     font-family: inherit;
     font-size: 16px;
     cursor: pointer;
-    transition:
-        background-color 0.2s,
-        transform 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 button:hover {
@@ -221,15 +254,80 @@ button:active {
     transform: translateY(0);
 }
 
-/* إظهار مكان التركيز عند استخدام لوحة المفاتيح */
+button[aria-pressed="true"] {
+    box-shadow: inset 0 0 0 2px var(--paper);
+}
+
+.secondary-button {
+    color: var(--pink-dark);
+    background-color: var(--pink-light);
+}
+
+.secondary-button:hover {
+    background-color: #e4bbd6;
+}
+
+/* تجربة العدّاد */
+.counter-display {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--pink-light);
+    border: 1px solid var(--border);
+}
+
+#counter-value {
+    display: block;
+    color: var(--pink-dark);
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1.5;
+    font-variant-numeric: tabular-nums;
+}
+
+/* الأقسام ظاهرة افتراضيًا حتى لو لم يعمل JavaScript */
+.reveal {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.is-pending {
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+/* إظهار القسم عند الانتقال إليه أو التركيز داخله */
+.reveal:target,
+.reveal:focus-within {
+    opacity: 1;
+    transform: none;
+}
+
+/* توضيح التركيز عند استخدام لوحة المفاتيح */
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+pre:focus-visible {
     outline: 3px solid var(--gold);
     outline-offset: 5px;
 }
 
-/* تكييف التصميم للشاشات الصغيرة */
+footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+}
+
+/* تنسيق الجوال */
 @media (max-width: 600px) {
+    html {
+        background-size: 100% auto;
+        background-position: center top;
+        background-repeat: repeat-y;
+        background-attachment: scroll;
+    }
+
     body {
         margin: 12px;
         padding: 24px 18px;
@@ -243,55 +341,42 @@ button:focus-visible {
         font-size: 21px;
     }
 
-    nav {
-        gap: 10px 16px;
+    section {
+        margin: 44px 0;
     }
 
     pre {
         padding: 14px;
     }
+
+    .actions button {
+        flex: 1 1 140px;
+    }
+
+    .next-section {
+        padding: 12px 18px;
+    }
 }
 
-/* احترام تفضيل تقليل الحركة */
+/* احترام إعداد تقليل الحركة */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
     }
 
+    .reveal,
+    #style-demo,
     button,
-    nav a {
+    .next-section {
         transition: none;
+    }
+
+    .reveal.is-pending {
+        opacity: 1;
+        transform: none;
     }
 
     button:hover {
         transform: none;
-    }
-}
-html {
-    min-height: 100%;
-    background-color: #fff5f9;
-    background-image:
-        linear-gradient(
-            rgba(255, 245, 249, 0.85),
-            rgba(255, 245, 249, 0.85)
-        ),
-        url("photo.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-body {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-}
-@media (max-width: 600px) {
-    html {
-        background-size: 100% auto;
-        background-position: center top;
-        background-repeat: repeat-y;
-        background-attachment: scroll;
     }
 }
